@@ -1,0 +1,9 @@
+---
+applications:
+- name: fengzhe_feathers
+  command: node app.js
+  host: fengzhe_feathers
+services:
+- mymongodb
+env:
+    NODE_ENV: production

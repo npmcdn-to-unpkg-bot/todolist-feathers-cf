@@ -1,0 +1,41 @@
+<mvc:View controllerName="com.henryzhefeng.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App>
+        <pages>
+            <Page title="Todo List">
+                <content>
+                    <Table id="table" width="auto" class="sapUiResponsiveMargin" mode="SingleSelect"
+                        items="{ path: '/', sorter: { path: 'Id', descending: false } }">
+                        <headerToolbar>
+                            <Toolbar>
+                                <Input  id="inputTitle" width="100px"/>
+                                <Input  id="inputDesc" width="200px"/>
+                                <Button id="addBtn" text="Add" press="onAddBtnClicked"/>
+                                <Button id="deleteBtn" text="Delete" press="onDeleteBtnClicked"/>
+                                <ToolbarSpacer/>
+                            </Toolbar>
+                        </headerToolbar>
+                        <columns>
+                            <Column id="title">
+                                <Text text="title"/>
+                            </Column>
+                            <Column id="descColumn">
+                                <Text text="Description"/>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem type="Active">
+                                <cells>
+                                    <ObjectNumber number="{title}"/>
+                                </cells>
+                                <cells>
+                                    <ObjectIdentifier title="{description}"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>
